@@ -1,7 +1,11 @@
-export default function TodoCard() {
+export default function TodoCard(props) {
     return (
-        <div>
-            To-do card
-        </div>
+        <li className="todoItem">
+            {props.children}
+            <div className="actionsContainer">
+                <i className="fa-solid fa-hand-sparkles"></i>
+                <i className="fa-solid fa-skull"></i>
+            </div>
+        </li>
     )
 }
