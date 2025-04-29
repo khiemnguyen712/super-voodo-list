@@ -1,8 +1,7 @@
 import TodoCard from "./TodoCard.jsx";
 
-export default function TodoList() {
-
-    let todos = ["Get a strand of hair from a virgin", "Get a vile of Garmen frog's blood", "Pick up the kids"]
+export default function TodoList(props) {
+    const {todos} = props
 
     return (
         <ul className="main">
