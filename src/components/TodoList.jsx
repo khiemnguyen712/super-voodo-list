@@ -5,8 +5,8 @@ export default function TodoList(props) {
 
     return (
         <ul className="main">
-            {todos.map((todo, index) =>
-                <TodoCard key={index} content={todo}>
+            {todos.map((todo, todoIndex) =>
+                <TodoCard {...props} key={todoIndex} index={todoIndex} content={todo}>
                     <p>{todo}</p>
                 </TodoCard>
             )}
