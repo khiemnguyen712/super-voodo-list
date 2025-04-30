@@ -1,15 +1,19 @@
 import './App.css'
-import TodoCard from "./components/TodoCard.jsx";
 import TodoInput from "./components/TodoInput.jsx";
 import TodoList from "./components/TodoList.jsx";
+import {useState} from "react";
 
 function App() {
+    const [todos, setTodos] = useState(() => [])
 
-    let todos = ["Get a strand of hair from a virgin", "Get a vile of Garmen frog's blood", "Pick up the kids"]
+    function handleAddTodos(newTodo) {
+        const newTodoList = [...todos, newTodo]
+        setTodos(newTodoList)
+    }
 
     return (
         <>
-            <TodoInput/>
+            <TodoInput handleAddTodos={handleAddTodos}/>
             <TodoList todos={todos}/>
         </>
     )
