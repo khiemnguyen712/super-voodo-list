@@ -1,7 +1,7 @@
-package service;
+package com.example.demo.service;
 
-import dao.TodoRepository;
-import entity.Todo;
+import com.example.demo.dao.TodoRepository;
+import com.example.demo.entity.Todo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,11 +18,11 @@ public class TodoService {
         return todoRepository.findAll();
     }
 
-    public Optional<Todo> findById(int id) {
+    public Optional<Todo> findTodoById(int id) {
         return todoRepository.findById(id);
     }
 
-    public void saveTodo(Todo todo) {
+    public void addTodo(Todo todo) {
         todoRepository.save(todo);
     }
 
@@ -34,8 +34,8 @@ public class TodoService {
         todoRepository.save(newTodo);
     }
 
-    public void delete(int id) {
-        findById(id);
+    public void deleteTodoById(int id) {
+        findTodoById(id);
 
         todoRepository.deleteById(id);
     }
