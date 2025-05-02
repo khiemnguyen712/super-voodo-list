@@ -10,6 +10,12 @@ function App() {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchTodo = async ()
+        const fetchTodo = async () => {
+            try {
+                const response = await axios.get('http://localhost:8080/todos')
+                setTodo(response.data)
+                setLoading(false);
+            }
+        }
     })
 }
