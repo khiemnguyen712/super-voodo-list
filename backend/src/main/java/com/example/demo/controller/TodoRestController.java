@@ -8,6 +8,7 @@ import com.example.demo.service.TodoService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/todos")
 public class TodoRestController {
@@ -28,7 +29,7 @@ public class TodoRestController {
     @PostMapping
     public Todo addTodo(@RequestBody Todo todo) {
         todoService.addTodo(todo);
-        
+
         return todo;
     }
 

@@ -9,5 +9,3 @@ export default function TodoItem({ todo, onDelete }) {
         </li>
     );
 }
-
-export default TodoItem;
