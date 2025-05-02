@@ -4,7 +4,7 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 import './App.css';
 
-function App() {
+export default function App() {
     const [todos, setTodos] = useState([])
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -39,5 +39,3 @@ function App() {
         </div>
     )
 }
-
-export default App;

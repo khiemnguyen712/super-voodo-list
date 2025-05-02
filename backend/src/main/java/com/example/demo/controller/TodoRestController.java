@@ -26,8 +26,10 @@ public class TodoRestController {
     }
 
     @PostMapping
-    public void addTodo(@RequestBody Todo todo) {
+    public Todo addTodo(@RequestBody Todo todo) {
         todoService.addTodo(todo);
+        
+        return todo;
     }
 
     @PutMapping("/{id}")
