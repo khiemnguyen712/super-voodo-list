@@ -33,7 +33,7 @@ export default function App() {
 
     return (
         <div className="app">
-            <h1>My Todo List</h1>
+            <h1>Generic todo</h1>
             <TodoInput setTodos={setTodos} todos={todos}/>
             <TodoList todos={todos} setTodos={setTodos}/>
         </div>

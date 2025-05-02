@@ -1,4 +1,3 @@
-// src/components/TodoItem.js
 import React from 'react';
 
 export default function TodoItem({ todo, onDelete }) {

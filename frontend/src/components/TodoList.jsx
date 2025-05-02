@@ -4,12 +4,8 @@ import TodoItem from './TodoItem.jsx'
 
 export default function TodoList({todos, setTodos}) {
     const handleDeleteTodo = async (id) => {
-        try {
-            await axios.delete(`http://localhost:8080/${id}`)
+            await axios.delete(`http://localhost:8080/todos/${id}`)
             setTodos(todos.filter(todo => todo.id !== id))
-        } catch (error) {
-            console.error("Error deleting todo:", error)
-        }
     }
 
     return (
