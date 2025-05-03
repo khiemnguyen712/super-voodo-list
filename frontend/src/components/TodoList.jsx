@@ -1,6 +1,5 @@
 import React from 'react'
 import axios from 'axios'
-import TodoItem from './TodoItem.jsx'
 
 export default function TodoList({todos, setTodos}) {
     const handleDeleteTodo = async (id) => {
@@ -11,7 +10,10 @@ export default function TodoList({todos, setTodos}) {
     return (
         <ul className="todo-list">
             {todos.map(todo => (
-                <TodoItem key={todo.id} todo={todo} onDelete={handleDeleteTodo}/>
+                <li>
+                    <span>{todo.content}</span>
+                    <button onClick={() => handleDeleteTodo(todo.id)}>Delete</button>
+                </li>
             ))}
         </ul>
     )

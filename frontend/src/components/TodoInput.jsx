@@ -1,8 +1,8 @@
 // src/components/TodoInput.js
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 
-function TodoInput({ setTodos, todos }) {
+function TodoInput({setTodos, todos}) {
     const [inputValue, setInputValue] = useState('');
 
     const handleInputChange = (event) => {
@@ -10,16 +10,11 @@ function TodoInput({ setTodos, todos }) {
     };
 
     const handleAddTodo = async () => {
-        if (inputValue.trim()) {
-            try {
-                const response = await axios.post('http://localhost:8080/todos', { content: inputValue });
-                setTodos([...todos, response.data]);
-                setInputValue('');
-            } catch (error) {
-                console.error("Error adding todo:", error);
-            }
-        }
-    };
+        const response = await axios.post('http://localhost:8080/todos', {content: inputValue});
+        setTodos([...todos, response.data]);
+        setInputValue('');
+    }
+
 
     return (
         <div className="todo-input">
