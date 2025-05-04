@@ -35,8 +35,7 @@ public class TodoRestController {
 
         return todo;
     }
-
-    // This is not the last comment
+    
     @PutMapping("/{id}")
     public void updateTodo(@PathVariable int id, @RequestBody Todo todo) {
         todoService.updateTodo(id, todo);
