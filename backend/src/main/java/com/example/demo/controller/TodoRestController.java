@@ -22,7 +22,6 @@ public class TodoRestController {
         return todoService.findAllTodo();
     }
 
-    // More comments
     @GetMapping("/{id}")
     public Optional<Todo> getTodoById(@PathVariable int id) {
         return todoService.findTodoById(id);
@@ -35,7 +34,7 @@ public class TodoRestController {
 
         return todo;
     }
-    
+
     @PutMapping("/{id}")
     public void updateTodo(@PathVariable int id, @RequestBody Todo todo) {
         todoService.updateTodo(id, todo);
