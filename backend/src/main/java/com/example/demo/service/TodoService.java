@@ -27,6 +27,7 @@ public class TodoService {
     }
 
     public void updateTodo(int id, Todo newTodo) {
+
         Todo existingTodo = todoRepository.findById(id).orElseThrow();
 
         existingTodo.setContent(newTodo.getContent());
@@ -35,6 +36,7 @@ public class TodoService {
     }
 
     public void deleteTodoById(int id) {
+
         findTodoById(id);
 
         todoRepository.deleteById(id);
