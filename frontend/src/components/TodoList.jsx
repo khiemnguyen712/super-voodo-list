@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios'
 
 export default function TodoList({todos, setTodos}) {
+
     const handleDeleteTodo = async (id) => {
             await axios.delete(`http://localhost:8080/todos/${id}`)
             setTodos(todos.filter(todo => todo.id !== id))
