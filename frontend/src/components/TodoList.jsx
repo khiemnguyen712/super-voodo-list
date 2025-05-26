@@ -20,6 +20,3 @@ export default function TodoList({todos, setTodos}) {
     )
 }
 
-console.log('Hello from old-test-branch')
-console.log('Some new shit')
-
