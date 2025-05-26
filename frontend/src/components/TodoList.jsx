@@ -19,6 +19,6 @@ export default function TodoList({todos, setTodos}) {
         </ul>
     )
 }
-// Git test
-console.log('This is on the main branch')
-console.log('This is also on the main branch')
+
+console.log('Hello from old-test-branch')
+
