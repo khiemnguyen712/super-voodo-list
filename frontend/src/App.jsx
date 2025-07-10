@@ -9,23 +9,19 @@ export default function App() {
     const [todos, setTodos] = useState([])
     const [loading, setLoading] = useState(true);
 
-    // Display loading message if still loading
+    useEffect(() => {
+        const fetchTodos = async () => {
+            const response = await axios.get('http://localhost:8080/todos')
+            setTodos(response.data)
+            setLoading(false);
+        }
+        fetchTodos()
+    }, [])
+
+    // loading check AFTER useEffect runs
     if (loading) {
         return <h2 className="loading-message">Loading todos...</h2>;
     }
-
-    // Fetch data from server
-    useEffect(() => {
-
-        const fetchTodos = async () => {
-
-                const response = await axios.get('http://localhost:8080/todos')
-                setTodos(response.data)
-                setLoading(false);
-        }
-
-        fetchTodos()
-    }, [])
 
     return (
         <div className="app">
